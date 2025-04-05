@@ -1,102 +1,49 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Hidayat - Domain Expansion</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidayat Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="profile">
-            <img src="gojo.jpg" alt="Gojo Profile">
-            <h1>Hidayat</h1>
-            <p>Web Developer | デザイナー</p>
-        </div>
-    </header><section class="about">
-    <h2>Tentang Saya</h2>
-    <p>Halo! Saya Hidayat, pengembang web yang terinspirasi dari dunia anime dan desain kreatif. Mari jelajahi domain terkutuk ini bersama!</p>
-    <button onclick="showGreeting()">Salam Anime!</button>
-    <button onclick="activateDomain()">Aktifkan Domain Expansion</button>
-</section>
+  <header>
+    <div class="profile">
+      <img src="gojo.jpg" alt="Gojo Profile" />
+      <h1>Hidayat</h1>
+      <p>領域展開 - Domain Expansion Specialist</p>
+    </div>
+  </header>  <section class="about">
+    <h2>About Me</h2>
+    <p>Saya seorang otaku penggemar Jujutsu Kaisen dan pemburu kutukan di dunia digital. Hubungi saya lewat tombol di bawah!</p>
+    <a href="https://wa.me/62895415147402" target="_blank"><button>Hubungi di WhatsApp</button></a>
+    <button onclick="activateDomainExpansion()">Domain Expansion</button>
+  </section>  <section>
+    <h2>Mini Game</h2>
+    <button onclick="playGame()">Acak Kutukan</button>
+    <div id="game-result"></div>
+  </section>  <div class="domain-expansion" id="particles"></div><audio id="domainSound" src="domain_expansion.mp3"></audio>
 
-<section class="game">
-    <h2>Mini Game: Tebak Karakter Anime</h2>
-    <p id="question">"Siapakah karakter yang dikenal dengan teknik <strong>Domain Expansion: Unlimited Void</strong>?"</p>
-    <button onclick="checkAnswer('gojo')">Satoru Gojo</button>
-    <button onclick="checkAnswer('itadori')">Yuji Itadori</button>
-    <button onclick="checkAnswer('sukuna')">Ryomen Sukuna</button>
-    <p id="game-result"></p>
-</section>
+  <script>
+    function activateDomainExpansion() {
+      document.body.classList.toggle('domain-active');
+      document.getElementById('domainSound').play();
 
-<section class="game">
-    <h2>Mini Game 2: Siapa Ini?</h2>
-    <p id="question2">"Karakter dengan rambut putih, mata tertutup, dan guru dari Itadori?"</p>
-    <button onclick="checkAnswer2('gojo')">Gojo Satoru</button>
-    <button onclick="checkAnswer2('nanami')">Nanami Kento</button>
-    <button onclick="checkAnswer2('megumi')">Fushiguro Megumi</button>
-    <p id="game-result2"></p>
-</section>
-
-<section class="contact">
-    <h2>Kontak</h2>
-    <p>WhatsApp: <a href="https://wa.me/62895415147402">+62 895-4151-47402</a></p>
-    <button onclick="window.open('https://wa.me/62895415147402')">Hubungi Saya</button>
-</section>
-
-<!-- Sound Effect -->
-<audio id="domain-sound" src="domain_expansion.mp3"></audio>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        createParticles();
-    });
-
-    function showGreeting() {
-        alert("Selamat datang di dunia kutukan, pejuang jujutsu!");
+      // Create particle animation
+      const container = document.getElementById("particles");
+      container.innerHTML = "";
+      for (let i = 0; i < 50; i++) {
+        let particle = document.createElement("div");
+        particle.className = "particle";
+        particle.style.left = Math.random() * 100 + "vw";
+        particle.style.animationDuration = 1 + Math.random() * 2 + "s";
+        container.appendChild(particle);
+      }
     }
 
-    function checkAnswer(answer) {
-        const result = document.getElementById("game-result");
-        if (answer === 'gojo') {
-            result.textContent = "Benar! Itu adalah teknik Gojo Satoru.";
-            result.style.color = 'cyan';
-        } else {
-            result.textContent = "Salah! Coba lagi~";
-            result.style.color = 'red';
-        }
+    function playGame() {
+      const kutukan = ["Ryomen Sukuna", "Hanami", "Jogo", "Mahito", "Dagon"];
+      const result = kutukan[Math.floor(Math.random() * kutukan.length)];
+      document.getElementById("game-result").innerText = `Kamu melawan: ${result}!`;
     }
-
-    function checkAnswer2(answer) {
-        const result2 = document.getElementById("game-result2");
-        if (answer === 'gojo') {
-            result2.textContent = "Tepat sekali! Itu Gojo Satoru.";
-            result2.style.color = 'lime';
-        } else {
-            result2.textContent = "Kurang tepat, pikirkan lagi...";
-            result2.style.color = 'orange';
-        }
-    }
-
-    function createParticles() {
-        let domain = document.createElement('div');
-        domain.classList.add('domain-expansion');
-        document.body.appendChild(domain);
-
-        for (let i = 0; i < 50; i++) {
-            let particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            particle.style.animationDelay = Math.random() * 5 + 's';
-            document.body.appendChild(particle);
-        }
-    }
-
-    function activateDomain() {
-        document.body.classList.add('domain-active');
-        document.getElementById('domain-sound').play();
-    }
-</script>
-
-</body>
+  </script></body>
 </html>
