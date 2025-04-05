@@ -1,120 +1,36 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Orbitron', sans-serif;
-  background-color: #050505;
-  color: #e0f7fa;
-}
+body { margin: 0; padding: 0; font-family: 'Orbitron', sans-serif; background-color: #050505; color: #e0f7fa; }
 
-.hero-banner {
-  background: linear-gradient(45deg, #000000, #0f1b2b);
-  text-align: center;
-  padding: 4rem 2rem;
-  box-shadow: 0 0 20px cyan;
-  position: relative;
-}
+.logo { width: 100px; height: auto; margin-bottom: 1rem; animation: pulse 3s infinite ease-in-out; filter: drop-shadow(0 0 10px cyan); }
 
-.hero-banner h1 {
-  font-size: 4rem;
-  color: cyan;
-  text-shadow: 0 0 15px cyan;
-}
+@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } }
 
-.jp-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #a8f0ff;
-  margin-bottom: 2rem;
-}
+.hero-banner { background: linear-gradient(45deg, #000000, #0f1b2b); text-align: center; padding: 4rem 2rem; box-shadow: 0 0 20px cyan; position: relative; }
 
-.hero-buttons button {
-  background-color: transparent;
-  border: 2px solid cyan;
-  color: cyan;
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 0 10px cyan;
-  transition: 0.3s;
-}
+.hero-banner h1 { font-size: 4rem; color: cyan; text-shadow: 0 0 15px cyan; }
 
-.hero-buttons button:hover {
-  background-color: cyan;
-  color: #000;
-}
+.jp-text { font-size: 1.5rem; font-weight: bold; color: #a8f0ff; margin-bottom: 2rem; }
 
-.section {
-  padding: 3rem 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+.hero-buttons button { background-color: transparent; border: 2px solid cyan; color: cyan; padding: 10px 20px; margin: 10px; font-size: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 0 10px cyan; transition: 0.3s; }
 
-.section h2 {
-  color: cyan;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
+.hero-buttons button:hover { background-color: cyan; color: #000; }
 
-.skill-list {
-  list-style: square;
-  padding-left: 2rem;
-  font-size: 1.2rem;
-}
+.section { padding: 3rem 2rem; max-width: 1000px; margin: 0 auto; }
 
-.project {
-  background: #101820;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-}
+.section h2 { color: cyan; font-size: 2rem; margin-bottom: 1rem; }
 
-button {
-  font-family: 'Orbitron', sans-serif;
-}
+.skill-list { list-style: square; padding-left: 2rem; font-size: 1.2rem; }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #0d0d0d;
-  color: #888;
-  border-top: 2px solid cyan;
-}
+.project { background: #101820; padding: 1rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); }
 
-.domain-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: radial-gradient(circle at center, rgba(0,255,255,0.2), #000);
-  pointer-events: none;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
+button { font-family: 'Orbitron', sans-serif; }
 
-.domain-overlay.active {
-  opacity: 1;
-}
+footer { text-align: center; padding: 2rem; background-color: #0d0d0d; color: #888; border-top: 2px solid cyan; }
 
-.particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: cyan;
-  border-radius: 50%;
-  animation: float 3s infinite ease-in-out;
-}
+.domain-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle at center, rgba(0,255,255,0.2), #000); pointer-events: none; z-index: 2; opacity: 0; transition: opacity 0.5s ease; }
 
-.logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 1rem;
-  animation: pulse 3s infinite ease-in-out;
-}
+.domain-overlay.active { opacity: 1; }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.7; }
-  }
+.particle { position: absolute; width: 6px; height: 6px; background: cyan; border-radius: 50%; animation: float 3s infinite ease-in-out; }
+
+@keyframes float { 0% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(-40px); opacity: 0.5; } 100% { transform: translateY(0); opacity: 1; } }
+
