@@ -1,167 +1,114 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #0b0f1a;
-  color: #f0f0f0;
-  transition: background-color 1s ease, color 1s ease;
-  overflow-x: hidden;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #050505;
+  color: #e0f7fa;
 }
 
-h1, h2, p {
-  margin: 0.5rem 0;
-  text-shadow: 1px 1px 2px #000;
-}
-
-header {
+.hero-banner {
+  background: linear-gradient(45deg, #000000, #0f1b2b);
   text-align: center;
-  padding: 2rem;
-  background: linear-gradient(to right, #000, #0b0f1a, #000);
-  animation: flicker 3s infinite alternate;
+  padding: 4rem 2rem;
+  box-shadow: 0 0 20px cyan;
+  position: relative;
 }
 
-@keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0.95; }
-  100% { opacity: 1; }
-}
-
-.profile img {
-  width: 140px;
-  border-radius: 50%;
-  border: 3px solid cyan;
-  box-shadow: 0 0 20px cyan, 0 0 40px cyan inset;
-  transition: transform 0.4s ease;
-}
-
-.profile img:hover {
-  transform: scale(1.1) rotate(2deg);
-}
-
-h1 {
-  font-size: 2.8rem;
+.hero-banner h1 {
+  font-size: 4rem;
   color: cyan;
-  animation: neon 1.5s ease-in-out infinite alternate;
+  text-shadow: 0 0 15px cyan;
 }
 
-@keyframes neon {
-  from { text-shadow: 0 0 5px cyan; }
-  to { text-shadow: 0 0 20px cyan, 0 0 40px cyan; }
+.jp-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #a8f0ff;
+  margin-bottom: 2rem;
 }
 
-.profile p {
-  font-size: 1.1rem;
-  color: #ccc;
-  font-style: italic;
-}
-
-section {
-  padding: 2rem;
-  text-align: center;
-  animation: fadeInUp 1.2s ease forwards;
-}
-
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(40px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-button {
+.hero-buttons button {
   background-color: transparent;
   border: 2px solid cyan;
-  padding: 12px 24px;
-  margin: 10px;
   color: cyan;
-  font-weight: bold;
+  padding: 10px 20px;
+  margin: 10px;
   font-size: 1rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 8px;
   box-shadow: 0 0 10px cyan;
+  transition: 0.3s;
 }
 
-button:hover {
+.hero-buttons button:hover {
   background-color: cyan;
-  color: #0b0f1a;
-  transform: scale(1.1);
-  box-shadow: 0 0 20px cyan;
-}
-
-#game-result {
-  margin-top: 1rem;
-  font-weight: bold;
-  font-size: 1.2rem;
-  animation: glitch 0.3s infinite;
-}
-
-@keyframes glitch {
-  0% { text-shadow: 2px 2px red; }
-  25% { text-shadow: -2px 2px blue; }
-  50% { text-shadow: 2px -2px lime; }
-  75% { text-shadow: -2px -2px yellow; }
-  100% { text-shadow: 2px 2px red; }
-}
-
-.domain-active {
-  background-color: #000000 !important;
-  color: #00ffff;
-  transition: background-color 2s ease;
-}
-
-.domain-active button {
-  border-color: #00ffff;
-  color: #00ffff;
-}
-
-.domain-active button:hover {
-  background-color: #00ffff;
   color: #000;
 }
 
-.domain-expansion {
+.section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  color: cyan;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.skill-list {
+  list-style: square;
+  padding-left: 2rem;
+  font-size: 1.2rem;
+}
+
+.project {
+  background: #101820;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+button {
+  font-family: 'Orbitron', sans-serif;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #0d0d0d;
+  color: #888;
+  border-top: 2px solid cyan;
+}
+
+.domain-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: radial-gradient(circle at center, rgba(0,255,255,0.2), #000);
   pointer-events: none;
-  z-index: -1;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.domain-overlay.active {
+  opacity: 1;
 }
 
 .particle {
-  position: fixed;
-  top: -10px;
-  width: 4px;
-  height: 12px;
-  background: rgba(0, 255, 255, 0.6);
-  animation: fall linear infinite;
-  border-radius: 2px;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: cyan;
+  border-radius: 50%;
+  animation: float 3s infinite ease-in-out;
 }
 
-@keyframes fall {
-  to {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-}
-
-a {
-  color: cyan;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-body::after {
-  content: '領域展開';
-  position: fixed;
-  font-size: 6rem;
-  color: rgba(0, 255, 255, 0.05);
-  top: 20%;
-  left: -10%;
-  transform: rotate(-30deg);
-  pointer-events: none;
-  z-index: 0;
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-40px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 1; }
 }
