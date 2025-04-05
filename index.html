@@ -1,49 +1,90 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hidayat Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hidayat | Jujutsu Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <div class="domain-overlay" id="domainEffect"></div>
+
   <header>
-    <div class="profile">
-      <img src="gojo.jpg" alt="Gojo Profile" />
+    <div class="hero-banner">
       <h1>Hidayat</h1>
-      <p>領域展開 - Domain Expansion Specialist</p>
+      <p class="jp-text">呪術師 - Cursed Energy Developer</p>
+      <div class="hero-buttons">
+        <button onclick="activateDomain()">領域展開 - Domain Expansion</button>
+        <a href="https://wa.me/62895415147402" target="_blank">
+          <button>連絡する - Contact Me</button>
+        </a>
+      </div>
     </div>
-  </header>  <section class="about">
-    <h2>About Me</h2>
-    <p>Saya seorang otaku penggemar Jujutsu Kaisen dan pemburu kutukan di dunia digital. Hubungi saya lewat tombol di bawah!</p>
-    <a href="https://wa.me/62895415147402" target="_blank"><button>Hubungi di WhatsApp</button></a>
-    <button onclick="activateDomainExpansion()">Domain Expansion</button>
-  </section>  <section>
-    <h2>Mini Game</h2>
-    <button onclick="playGame()">Acak Kutukan</button>
-    <div id="game-result"></div>
-  </section>  <div class="domain-expansion" id="particles"></div><audio id="domainSound" src="domain_expansion.mp3"></audio>
+  </header>
+
+  <section class="section bio">
+    <h2>Who Am I?</h2>
+    <p>A web developer cursed with creativity and blessed with anime-tier ideas. Specialized in designing dimensional-level interfaces using cursed HTML, CSS, and dark sorcery.</p>
+  </section>
+
+  <section class="section skills">
+    <h2>Skills & Techniques</h2>
+    <ul class="skill-list">
+      <li>Infinity UI Barrier</li>
+      <li>Reverse Cursed UI Healing</li>
+      <li>Domain Animation Expansion</li>
+      <li>Responsive Curse Techniques</li>
+      <li>Shikigami Layout Summoning</li>
+    </ul>
+  </section>
+
+  <section class="section portfolio">
+    <h2>Projects from the Cursed Realm</h2>
+    <div class="project">
+      <h3>Sorcerer Tracker</h3>
+      <p>Track and filter users by their cursed energy signature.</p>
+    </div>
+    <div class="project">
+      <h3>Yuji Memory Timeline</h3>
+      <p>Timeline animation inspired by Itadori's memory manipulation concept.</p>
+    </div>
+    <div class="project">
+      <h3>Cursed Inventory UI</h3>
+      <p>Inventory system for mobile RPG with JJK UI style.</p>
+    </div>
+  </section>
+
+  <section class="section game">
+    <h2>Play: Spin Your Technique</h2>
+    <button onclick="spinTechnique()">Reveal Your Cursed Technique</button>
+    <div id="technique-result"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Hidayat | 呪術開発者</p>
+  </footer>
 
   <script>
-    function activateDomainExpansion() {
-      document.body.classList.toggle('domain-active');
-      document.getElementById('domainSound').play();
-
-      // Create particle animation
-      const container = document.getElementById("particles");
-      container.innerHTML = "";
+    function activateDomain() {
+      const overlay = document.getElementById('domainEffect');
+      overlay.classList.toggle('active');
       for (let i = 0; i < 50; i++) {
-        let particle = document.createElement("div");
-        particle.className = "particle";
-        particle.style.left = Math.random() * 100 + "vw";
-        particle.style.animationDuration = 1 + Math.random() * 2 + "s";
-        container.appendChild(particle);
+        let dot = document.createElement('div');
+        dot.className = 'particle';
+        dot.style.left = Math.random() * window.innerWidth + 'px';
+        dot.style.top = Math.random() * window.innerHeight + 'px';
+        overlay.appendChild(dot);
       }
+      const audio = new Audio('domain_expansion.mp3');
+      audio.play();
     }
 
-    function playGame() {
-      const kutukan = ["Ryomen Sukuna", "Hanami", "Jogo", "Mahito", "Dagon"];
-      const result = kutukan[Math.floor(Math.random() * kutukan.length)];
-      document.getElementById("game-result").innerText = `Kamu melawan: ${result}!`;
+    function spinTechnique() {
+      const techniques = ["Black Flash", "Infinity", "Idle Transfiguration", "Ten Shadows", "Simple Domain"];
+      const chosen = techniques[Math.floor(Math.random() * techniques.length)];
+      document.getElementById('technique-result').innerText = `Your technique is: ${chosen}`;
     }
-  </script></body>
+  </script>
+</body>
 </html>
