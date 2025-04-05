@@ -1,48 +1,131 @@
-/* style.css - Jujutsu Kaisen Themed */ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+/* Reset & dasar */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b0f1a;
+  color: #f0f0f0;
+  transition: background-color 1s ease, color 1s ease;
+}
 
-body { font-family: 'Noto Sans JP', sans-serif; margin: 0; padding: 0; background: url('jujutsu-kaisen-bg.jpg') no-repeat center center fixed; background-size: cover; color: white; text-align: center; overflow: hidden; }
+h1, h2, p {
+  margin: 0.5rem 0;
+  text-shadow: 1px 1px 2px #000;
+}
 
-header { padding: 30px; background: rgba(30, 30, 30, 0.9); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); }
+/* Header Profil */
+header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #000, #0b0f1a, #000);
+}
 
-.profile img { width: 180px; height: 180px; border-radius: 50%; border: 5px solid white; animation: glow 2s infinite alternate; }
+.profile img {
+  width: 130px;
+  border-radius: 50%;
+  border: 3px solid cyan;
+  box-shadow: 0 0 15px cyan;
+}
 
-@keyframes glow { 0% { filter: drop-shadow(0px 0px 5px cyan); } 100% { filter: drop-shadow(0px 0px 20px blue); } }
+h1 {
+  font-size: 2.5rem;
+  color: cyan;
+}
 
-.profile h1 { margin: 15px 0 10px; font-size: 3em; font-weight: bold; text-shadow: 4px 4px 20px rgba(0, 255, 255, 0.8); }
+.profile p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
 
-.about, .contact { padding: 25px; margin: 30px auto; max-width: 700px; background: rgba(0, 0, 0, 0.85); border-radius: 15px; box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.6); backdrop-filter: blur(8px); }
+/* Section */
+section {
+  padding: 2rem;
+  text-align: center;
+}
 
-.contact a { color: #ff0000; text-decoration: none; font-weight: bold; font-size: 1.2em; transition: 0.3s; }
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-.contact a:hover { color: #ffcc00; text-shadow: 0px 0px 15px yellow; }
+/* Tombol Interaktif */
+button {
+  background-color: transparent;
+  border: 2px solid cyan;
+  padding: 10px 20px;
+  margin: 10px;
+  color: cyan;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
 
-/* Efek Anime Energi Cursed */ @keyframes cursed-energy { 0% { text-shadow: 0px 0px 10px cyan; } 100% { text-shadow: 0px 0px 30px blue; } }
+button:hover {
+  background-color: cyan;
+  color: #0b0f1a;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px cyan;
+}
 
-.profile p { animation: cursed-energy 1.5s infinite alternate; font-size: 1.3em; }
+/* Game Result */
+#game-result,
+#game-result2 {
+  margin-top: 1rem;
+  font-weight: bold;
+}
 
-/* Efek Domain Expansion */ .domain-expansion { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle, rgba(0, 0, 0, 0.9) 20%, rgba(0, 255, 255, 0.3) 80%); opacity: 0; animation: domain-expand 5s infinite alternate; }
+/* Domain Expansion Mode */
+.domain-active {
+  background-color: #000 !important;
+  color: #00ffff;
+}
 
-@keyframes domain-expand { 0% { opacity: 0.2; transform: scale(1); } 100% { opacity: 0.6; transform: scale(1.1); } }
+.domain-active button {
+  border-color: #00ffff;
+  color: #00ffff;
+}
 
-/* Efek Partikel Seperti Kutukan */ @keyframes falling-curses { from { transform: translateY(-10vh) rotate(0deg); opacity: 1; } to { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+.domain-active button:hover {
+  background-color: #00ffff;
+  color: #000;
+}
 
-.particle { position: absolute; width: 10px; height: 10px; background-color: red; border-radius: 50%; opacity: 0.9; animation: falling-curses 4s linear infinite; }
+/* Efek Partikel */
+.domain-expansion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
 
-/* Generate Partikel dan Domain Expansion */
+.particle {
+  position: fixed;
+  top: -10px;
+  width: 4px;
+  height: 12px;
+  background: rgba(0, 255, 255, 0.6);
+  animation: fall linear infinite;
+  border-radius: 2px;
+}
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let domain = document.createElement('div');
-        domain.classList.add('domain-expansion');
-        document.body.appendChild(domain);
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
 
-        for (let i = 0; i < 50; i++) {
-            let particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            particle.style.animationDelay = Math.random() * 5 + 's';
-            document.body.appendChild(particle);
-        }
-    });
-</script>
+/* Link WA */
+a {
+  color: cyan;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
