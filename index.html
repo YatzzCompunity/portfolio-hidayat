@@ -1,90 +1,61 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hidayat | Jujutsu Portfolio</title>
+  <title>Hidayat - Jujutsu Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <div class="domain-overlay" id="domainEffect"></div>
 
-  <header>
-    <div class="hero-banner">
-      <img src="gojo.jpg" alt="Hidayat Logo" class="logo">
-      <h1>Hidayat</h1>
-      <p class="jp-text">呪術師 - Cursed Energy Developer</p>
-      <div class="hero-buttons">
-        <button onclick="activateDomain()">領域展開 - Domain Expansion</button>
-        <a href="https://wa.me/62895415147402" target="_blank">
-          <button>連絡する - Contact Me</button>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <section class="section bio">
-    <h2>Who Am I?</h2>
-    <p>A web developer cursed with creativity and blessed with anime-tier ideas. Specialized in designing dimensional-level interfaces using cursed HTML, CSS, and dark sorcery.</p>
-  </section>
-
-  <section class="section skills">
-    <h2>Skills & Techniques</h2>
-    <ul class="skill-list">
-      <li>Infinity UI Barrier</li>
-      <li>Reverse Cursed UI Healing</li>
-      <li>Domain Animation Expansion</li>
-      <li>Responsive Curse Techniques</li>
-      <li>Shikigami Layout Summoning</li>
-    </ul>
-  </section>
-
-  <section class="section portfolio">
-    <h2>Projects from the Cursed Realm</h2>
-    <div class="project">
-      <h3>Sorcerer Tracker</h3>
-      <p>Track and filter users by their cursed energy signature.</p>
-    </div>
-    <div class="project">
-      <h3>Yuji Memory Timeline</h3>
-      <p>Timeline animation inspired by Itadori's memory manipulation concept.</p>
-    </div>
-    <div class="project">
-      <h3>Cursed Inventory UI</h3>
-      <p>Inventory system for mobile RPG with JJK UI style.</p>
+  <section class="hero-banner">
+    <img src="gojo.jpg" alt="Logo Hidayat" class="logo" />
+    <h1>Hidayat</h1>
+    <p class="jp-text">呪術師の領域 - Domain of the Sorcerer</p>
+    <div class="hero-buttons">
+      <button onclick="activateDomain()">Domain Expansion</button>
     </div>
   </section>
 
-  <section class="section game">
-    <h2>Play: Spin Your Technique</h2>
-    <button onclick="spinTechnique()">Reveal Your Cursed Technique</button>
-    <div id="technique-result"></div>
+  <section class="section" id="tracker">
+    <h2>Sorcerer Tracker</h2>
+    <input type="text" placeholder="Enter cursed energy signature..." />
+    <div id="tracker-results">No result.</div>
+  </section>
+
+  <section class="section">
+    <h2>Yuji Memory Timeline</h2>
+    <div class="timeline">
+      <div class="event">Joined Tokyo Jujutsu High</div>
+      <div class="event">Swallowed Sukuna's finger</div>
+      <div class="event">First domain expansion experience</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Cursed Inventory</h2>
+    <div class="inventory">
+      <div class="inventory-item">Cursed Tool: Slaughter Demon</div>
+      <div class="inventory-item">Talisman: Sealing Paper</div>
+      <div class="inventory-item">Scroll: Black Flash Record</div>
+      <div class="inventory-item">Charm: Inverted Spear of Heaven</div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Hidayat | 呪術開発者</p>
+    WhatsApp: <a href="https://wa.me/62895415147402" style="color: cyan;">62895415147402</a>
   </footer>
 
   <script>
     function activateDomain() {
       const overlay = document.getElementById('domainEffect');
-      overlay.classList.toggle('active');
-      for (let i = 0; i < 50; i++) {
-        let dot = document.createElement('div');
-        dot.className = 'particle';
-        dot.style.left = Math.random() * window.innerWidth + 'px';
-        dot.style.top = Math.random() * window.innerHeight + 'px';
-        overlay.appendChild(dot);
-      }
+      overlay.classList.add('active');
+      setTimeout(() => overlay.classList.remove('active'), 4000);
       const audio = new Audio('domain_expansion.mp3');
       audio.play();
-    }
-
-    function spinTechnique() {
-      const techniques = ["Black Flash", "Infinity", "Idle Transfiguration", "Ten Shadows", "Simple Domain"];
-      const chosen = techniques[Math.floor(Math.random() * techniques.length)];
-      document.getElementById('technique-result').innerText = `Your technique is: ${chosen}`;
     }
   </script>
 </body>
