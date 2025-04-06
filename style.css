@@ -1,42 +1,93 @@
-body { margin: 0; padding: 0; font-family: 'Orbitron', sans-serif; background-color: #050505; color: #e0f7fa; }
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+  color: white;
+}
 
-.hero-banner { background: linear-gradient(45deg, #000000, #0f1b2b); text-align: center; padding: 4rem 2rem; box-shadow: 0 0 20px cyan; position: relative; }
+.hero-banner {
+  text-align: center;
+  padding: 50px 20px;
+  background: radial-gradient(circle, #001f3f, #000);
+}
 
-.logo { width: 100px; height: auto; margin-bottom: 1rem; animation: pulse 3s infinite ease-in-out; }
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
 
-@keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } }
+.jp-text {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 15px;
+}
 
-.hero-banner h1 { font-size: 4rem; color: cyan; text-shadow: 0 0 15px cyan; }
+.hero-buttons button {
+  background: #0077ff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-.jp-text { font-size: 1.5rem; font-weight: bold; color: #a8f0ff; margin-bottom: 2rem; }
+.hero-buttons button:hover {
+  background: #0055cc;
+}
 
-.hero-buttons button { background-color: transparent; border: 2px solid cyan; color: cyan; padding: 10px 20px; margin: 10px; font-size: 1rem; border-radius: 10px; cursor: pointer; box-shadow: 0 0 10px cyan; transition: 0.3s; }
+.section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
 
-.hero-buttons button:hover { background-color: cyan; color: #000; }
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
 
-.section { padding: 3rem 2rem; max-width: 1000px; margin: 0 auto; }
+.event {
+  padding: 10px;
+  background: #222;
+  border-left: 5px solid #0077ff;
+}
 
-.section h2 { color: cyan; font-size: 2rem; margin-bottom: 1rem; }
+.inventory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
 
-.skill-list { list-style: square; padding-left: 2rem; font-size: 1.2rem; }
+.inventory-item {
+  padding: 15px;
+  background: #181818;
+  border: 1px solid #444;
+}
 
-.project { background: #101820; padding: 1rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); }
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #ccc;
+}
 
-button { font-family: 'Orbitron', sans-serif; }
+.domain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
 
-footer { text-align: center; padding: 2rem; background-color: #0d0d0d; color: #888; border-top: 2px solid cyan; }
-
-.domain-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle at center, rgba(0,255,255,0.2), #000); pointer-events: none; z-index: 2; opacity: 0; transition: opacity 0.5s ease; }
-
-.domain-overlay.active { opacity: 1; }
-
-.particle { position: absolute; width: 6px; height: 6px; background: cyan; border-radius: 50%; animation: float 3s infinite ease-in-out; }
-
-@keyframes float { 0% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(-40px); opacity: 0.5; } 100% { transform: translateY(0); opacity: 1; } }
-
-/* Sorcerer Tracker */ #tracker { padding: 2rem; background: #0e0e0e; border: 2px solid cyan; border-radius: 12px; box-shadow: 0 0 15px cyan; margin-bottom: 2rem; } #tracker input { padding: 0.5rem; width: 100%; margin-bottom: 1rem; background: #1c1c1c; border: 1px solid cyan; color: cyan; } #tracker-results { font-size: 1.1rem; }
-
-/* Yuji Memory Timeline */ .timeline { border-left: 3px solid cyan; padding-left: 1rem; margin-top: 2rem; } .timeline .event { margin-bottom: 1rem; color: #bafaff; } .timeline .event::before { content: '⚫'; margin-right: 0.5rem; color: cyan; }
-
-/* Cursed Inventory UI */ .inventory { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem; margin-top: 2rem; } .inventory-item { border: 2px solid cyan; padding: 1rem; text-align: center; background: #0e1a1a; border-radius: 8px; color: #e0ffff; transition: 0.3s; } .inventory-item:hover { background: #002929; transform: scale(1.05); }
-
+.domain-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
