@@ -1,10 +1,10 @@
 body { margin: 0; padding: 0; font-family: 'Orbitron', sans-serif; background-color: #050505; color: #e0f7fa; }
 
-.logo { width: 100px; height: auto; margin-bottom: 1rem; animation: pulse 3s infinite ease-in-out; filter: drop-shadow(0 0 10px cyan); }
+.hero-banner { background: linear-gradient(45deg, #000000, #0f1b2b); text-align: center; padding: 4rem 2rem; box-shadow: 0 0 20px cyan; position: relative; }
+
+.logo { width: 100px; height: auto; margin-bottom: 1rem; animation: pulse 3s infinite ease-in-out; }
 
 @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } }
-
-.hero-banner { background: linear-gradient(45deg, #000000, #0f1b2b); text-align: center; padding: 4rem 2rem; box-shadow: 0 0 20px cyan; position: relative; }
 
 .hero-banner h1 { font-size: 4rem; color: cyan; text-shadow: 0 0 15px cyan; }
 
@@ -33,4 +33,10 @@ footer { text-align: center; padding: 2rem; background-color: #0d0d0d; color: #8
 .particle { position: absolute; width: 6px; height: 6px; background: cyan; border-radius: 50%; animation: float 3s infinite ease-in-out; }
 
 @keyframes float { 0% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(-40px); opacity: 0.5; } 100% { transform: translateY(0); opacity: 1; } }
+
+/* Sorcerer Tracker */ #tracker { padding: 2rem; background: #0e0e0e; border: 2px solid cyan; border-radius: 12px; box-shadow: 0 0 15px cyan; margin-bottom: 2rem; } #tracker input { padding: 0.5rem; width: 100%; margin-bottom: 1rem; background: #1c1c1c; border: 1px solid cyan; color: cyan; } #tracker-results { font-size: 1.1rem; }
+
+/* Yuji Memory Timeline */ .timeline { border-left: 3px solid cyan; padding-left: 1rem; margin-top: 2rem; } .timeline .event { margin-bottom: 1rem; color: #bafaff; } .timeline .event::before { content: '⚫'; margin-right: 0.5rem; color: cyan; }
+
+/* Cursed Inventory UI */ .inventory { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem; margin-top: 2rem; } .inventory-item { border: 2px solid cyan; padding: 1rem; text-align: center; background: #0e1a1a; border-radius: 8px; color: #e0ffff; transition: 0.3s; } .inventory-item:hover { background: #002929; transform: scale(1.05); }
 
