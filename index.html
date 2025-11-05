@@ -2,63 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hidayat - Jujutsu Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKY POTION APPS</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="login-container">
+    <img src="avatar.png" alt="Avatar" class="avatar" />
+    <h1>SKY POTION APPS</h1>
+    <p class="creator">Created by @woizzz</p>
 
-  <div class="domain-overlay" id="domainEffect"></div>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
 
-  <header class="hero-banner">
-    <img src="gojo.jpg" alt="Logo Hidayat" class="logo" />
-    <h1>Hidayat</h1>
-    <p class="jp-text">呪術師の領域 - Domain of the Sorcerer</p>
-    <div class="hero-buttons">
-      <button onclick="activateDomain()">Domain Expansion</button>
-    </div>
-  </header>
+    <button onclick="login()" class="login-btn">☠️ - LOGIN - ☠️</button>
+    <button class="creator-btn">☐ Creator Apps</button>
 
-  <main class="main-container">
-    <section class="section tracker">
-      <h2>Sorcerer Tracker</h2>
-      <input type="text" placeholder="Enter cursed energy signature..." />
-      <div id="tracker-results">No result.</div>
-    </section>
+    <p id="message"></p>
+  </div>
 
-    <section class="section">
-      <h2>Yuji Memory Timeline</h2>
-      <div class="timeline">
-        <div class="event">Joined Tokyo Jujutsu High</div>
-        <div class="event">Swallowed Sukuna's finger</div>
-        <div class="event">First domain expansion experience</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Cursed Inventory</h2>
-      <div class="inventory">
-        <div class="inventory-item">Cursed Tool: Slaughter Demon</div>
-        <div class="inventory-item">Talisman: Sealing Paper</div>
-        <div class="inventory-item">Scroll: Black Flash Record</div>
-        <div class="inventory-item">Charm: Inverted Spear of Heaven</div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    WhatsApp: <a href="https://wa.me/62895415147402" target="_blank" style="color: cyan;">62895415147402</a>
-  </footer>
-
-  <script>
-    function activateDomain() {
-      const overlay = document.getElementById('domainEffect');
-      overlay.classList.add('active');
-      setTimeout(() => overlay.classList.remove('active'), 4000);
-      const audio = new Audio('domain_expansion.mp3');
-      audio.play();
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
