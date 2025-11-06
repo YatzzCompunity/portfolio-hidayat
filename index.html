@@ -1,26 +1,244 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SKY POTION APPS</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayattz Website</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="login-container">
-    <img src="avatar.png" alt="Avatar" class="avatar" />
-    <h1>SKY POTION APPS</h1>
-    <p class="creator">Created by @woizzz</p>
+    <div id="particles-js"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">AmbaTuzamX </div>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="music-controls">
+                    <button id="play-pause-btn" class="music-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
+    <section class="hero">
+        <div class="hero-content">
+            <div class="profile-circle">
+                <img src="https://files.catbox.moe/xbjs7a.webp" alt="Developer Profile" id="profile-img">
+            </div>
+            <h1 class="developer-name">RuokDayatz</h1>
+            <p class="developer-title">Full Stack Developer</p>
+        </div>
+    </section>
 
-    <button onclick="login()" class="login-btn">☠️ - LOGIN - ☠️</button>
-    <button class="creator-btn">☐ Creator Apps</button>
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                I am a passionate full-stack developer with 2 years of experience creating innovative web solutions. 
+                I love turning complex problems into simple, beautiful designs. My mission is to create digital 
+                experiences that make a difference in people's lives.
+            </p>
+            <div class="skills">
+                <h3>Programming Languages & Technologies</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js-square"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-laravel"></i>
+                        <span>Laravel</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-react"></i>
+                        <span>React.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p id="message"></p>
-  </div>
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="E-Commerce Platform">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Full-featured online store with payment integration and admin dashboard</p>
+                        <div class="project-tech">
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Task Management App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Task Management App</h3>
+                        <p>Real-time collaborative task management with drag-and-drop interface</p>
+                        <div class="project-tech">
+                            <span>React.js</span>
+                            <span>Node.js</span>
+                            <span>Socket.io</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&h=250&fit=crop" alt="AI Chatbot">
+                    </div>
+                    <div class="project-info">
+                        <h3>AI Chatbot</h3>
+                        <p>Intelligent customer service bot with natural language processing</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="Financial Dashboard">
+                    </div>
+                    <div class="project-info">
+                        <h3>Financial Dashboard</h3>
+                        <p>Interactive financial analytics platform with real-time data visualization</p>
+                        <div class="project-tech">
+                            <span>React.js</span>
+                            <span>D3.js</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop" alt="Social Media App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Social Media App</h3>
+                        <p>Modern social platform with real-time messaging and content sharing</p>
+                        <div class="project-tech">
+                            <span>Laravel</span>
+                            <span>Vue.js</span>
+                            <span>Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <section class="thanks" id="thanks">
+        <div class="container">
+            <h2 class="section-title">Special Thanks</h2>
+            <div class="thanks-content">
+                <p>I would like to express my gratitude to all the amazing people who have supported my journey:</p>
+                <div class="thanks-list">
+                    <div class="thanks-item">
+                        <i class="fas fa-heart"></i>
+                        <span>My mentors and teachers</span>
+                    </div>
+                    <div class="thanks-item">
+                        <i class="fas fa-users"></i>
+                        <span>The open-source community</span>
+                    </div>
+                    <div class="thanks-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>My clients and collaborators</span>
+                    </div>
+                    <div class="thanks-item">
+                        <i class="fas fa-family"></i>
+                        <span>My family and friends</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-cards">
+                <div class="contact-card whatsapp-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Let's chat on WhatsApp</p>
+                    <a href="https://wa.me/6285893973177" target="_blank" class="contact-btn">
+                        Message Me
+                    </a>
+                </div>
+                
+                <div class="contact-card telegram-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <h3>Telegram</h3>
+                    <p>Connect with me on Telegram</p>
+                    <a href="https://t.me/jawir666" target="_blank" class="contact-btn">
+                        Chat Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>AzamTukam</h3>
+                    <p>Full Stack Developer</p>
+                </div>
+                <div class="footer-center">
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2025 ZamX7. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <audio id="background-music" loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
